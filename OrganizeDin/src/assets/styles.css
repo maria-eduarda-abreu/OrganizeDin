@@ -1,0 +1,35 @@
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centralizar o objeto*/
+.container {
+    display: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura total da tela */
+}
+
+
+.btn-primary {
+    background-color: #6f42c0;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+
