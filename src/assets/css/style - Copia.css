@@ -1,0 +1,18 @@
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn-primary {
+    background-color: #6f42c0;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: black;
+    color: white;
+    border: none;
+}
