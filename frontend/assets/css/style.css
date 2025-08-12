@@ -1,0 +1,56 @@
+/*
+    Nome do Arquivo: style.css
+    Descrição: Estilos personalizados para o projeto OrganizeDin.
+*/
+
+/*
+    Estilo para a fonte principal do projeto
+    O * (seletor universal) aplica a fonte a todos os elementos da página.
+*/
+* {
+    font-family: 'Arial', sans-serif;
+}
+
+/*
+    Estilo para o corpo da página (body)
+    Define a cor de fundo e garante uma transição suave para as mudanças de cor.
+*/
+body {
+    background-color: #f8f9fa; /* Cor de fundo padrão do Bootstrap (cinza claro) */
+}
+
+/*
+    Estilo para o card de login
+    Adiciona uma sombra suave e arredonda as bordas para um visual mais moderno.
+*/
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/*
+    Estilo para o título principal (h1)
+    Define a cor e a margem inferior para o título da aplicação.
+*/
+.card-title {
+    color: #4a4a4a;
+    font-weight: 600;
+}
+
+/*
+    Estilo para o botão principal
+    Vamos dar um toque mais personalizado ao botão primário.
+*/
+.btn-primary {
+    background-color: #191970; /* Um tom de roxo */
+    border-color: #191970;
+}
+
+/*
+    Estilo para o botão principal quando o mouse está sobre ele
+    Altera a cor para uma tonalidade mais escura de roxo.
+*/
+.btn-primary:hover {
+    background-color: #191970;
+    border-color: #191970;
+}
