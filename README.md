@@ -32,9 +32,11 @@ possue opções de planos gratuitos. </h6>
 
 <h3> Tecnologias Usadas no Projeto </h3>
   <ul>
-    <li>FIGMA</li>
-    <li>JAVA</li>
-    <li>BOOTSTRAPL</li>
-    <li>HTML</li>
-    <li>CSS</li>
+    <li>Figma</li>
+    <li>trellor</li>
+    <li>Java</li>
+    <li>Boot Strap</li>
+    <li>Html</li>
+    <li>Css</li>
+    <li>Javascript</li>
   </ul>
