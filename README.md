@@ -1,4 +1,4 @@
-### Título do Projeto: OrganizeDin
+### OrganizeDin
 
 #### <p align="center">Gerencie suas finanças de forma simples e intuitiva.</p>
 
@@ -32,16 +32,7 @@ O **OrganizeDin** é uma plataforma de gerenciamento financeiro desenvolvida com
 ### 🖼️ Protótipo das Telas
 
 <div align="center">
-  <img src="docs/TelasOrganizeDin/inicial.png" alt="Tela inicial" width="300">
-  <img src="docs/TelasOrganizeDin/Cadastro.png" alt="Tela inicial" width="300">
-  <img src="docs/TelasOrganizeDin/home.png" alt="Tela inicial" width="300">
-  <img src="docs/TelasOrganizeDin/Recebimentos.png" alt="Tela inicial" width="300">
-  <img src="docs/TelasOrganizeDin/Gastos.png" alt="Tela inicial" width="300">
-  <img src="docs/TelasOrganizeDin/Investimentos.png" alt="Tela inicial" width="300">
-  <img src="docs/TelasOrganizeDin/Investimentos2.png" alt="Tela inicial" width="300">
-  <img src="docs/TelasOrganizeDin/Estudos.png" alt="Tela inicial" width="300">
-  <img src="docs/TelasOrganizeDin/Planejamento.png" alt="Tela inicial" width="300">
-  <img src="docs/TelasOrganizeDin/Perfil.png" alt="Tela inicial" width="300">
+ <p>carregando...</p>
 </div>
 
 ### 💻 Tecnologias Utilizadas
