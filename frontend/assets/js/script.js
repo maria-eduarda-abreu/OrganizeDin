@@ -4,7 +4,7 @@
     Este código agora está corrigido para os testes de navegação e comunicação.
 */
 
-const API_URL = 'http://localhost:8080/api';
+const API_URL = 'http://127.0.0.1:8080/api';
 
 // Função para a página de login
 function setupLogin() {
