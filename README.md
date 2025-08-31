@@ -1,21 +1,36 @@
-<h3> Fintech OrganizeDin </h3>
+### Título do Projeto: OrganizeDin
 
-<h6> Para pessoas com recursos financeiros a serem gerenciados. 
-Que estão insatisfeitos com a administração financeira atual. 
-Nosso produto OrganizeDin é uma de proposta de educação 
-finaceira completa. 
-Que fornece gerenciamento de finanças, planejamento 
-financeiro, estudos, notícias e informações necessária de acordo 
-com cada perfil de usuário. 
-Ao contrário de aplicativos que só fornecem planejamento ou 
-gerenciamento ou estudos, sendo disponíveis somente com 
-opções de planos pagos. 
-Nosso produto é completo e fornece o gerenciamento financeiro, 
-planejamento de metas, estudos, notícias e informações de 
-acordo com a análise de perfil de cada usuário, além  disso, 
-possue opções de planos gratuitos. </h6>
+#### <p align="center">Gerencie suas finanças de forma simples e intuitiva.</p>
 
-<h3> Protótipo Das Telas OrganizeDin </h3>
+---
+
+### 📋 Índice
+
+- [Descrição do Projeto](#-descrição-do-projeto)
+- [Funcionalidades](#-funcionalidades)
+- [Protótipo das Telas](#-protótipo-das-telas)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Arquitetura do Projeto](#-arquitetura-do-projeto)
+- [Como Rodar o Projeto](#-como-rodar-o-projeto)
+- [Endpoints da API](#-endpoints-da-api)
+
+---
+
+### 📝 Descrição do Projeto
+
+O **OrganizeDin** é uma plataforma de gerenciamento financeiro desenvolvida como um projeto de estudo. O objetivo é fornecer aos usuários uma ferramenta completa para educação financeira, que inclui gerenciamento de finanças, planejamento financeiro e visualização de dados. Diferentemente de outros aplicativos que oferecem funcionalidades limitadas ou planos pagos, o OrganizeDin busca ser uma solução completa e acessível.
+
+### ✨ Funcionalidades
+
+- **Cadastro e Login de Usuários:** Sistema de autenticação para acesso seguro à plataforma.
+- **Painel de Controle (Dashboard):** Visão geral do saldo, receitas, despesas e últimas transações.
+- **Futuras Funcionalidades:**
+    - Gerenciamento de despesas e receitas.
+    - Planejamento de metas financeiras.
+    - Seção de notícias e estudos sobre finanças.
+
+### 🖼️ Protótipo das Telas
+
 <div align="center">
   <img src="docs/TelasOrganizeDin/inicial.png" alt="Tela inicial" width="300">
   <img src="docs/TelasOrganizeDin/Cadastro.png" alt="Tela inicial" width="300">
@@ -29,14 +44,78 @@ possue opções de planos gratuitos. </h6>
   <img src="docs/TelasOrganizeDin/Perfil.png" alt="Tela inicial" width="300">
 </div>
 
+### 💻 Tecnologias Utilizadas
 
-<h3> Tecnologias Usadas no Projeto </h3>
-  <ul>
-    <li>Figma</li>
-    <li>trellor</li>
-    <li>Java</li>
-    <li>Boot Strap</li>
-    <li>Html</li>
-    <li>Css</li>
-    <li>Javascript</li>
-  </ul>
+O projeto utiliza uma arquitetura de duas camadas (front-end e back-end) e as seguintes tecnologias:
+
+**Front-end:**
+- HTML5
+- CSS3
+- JavaScript
+- [Bootstrap](https://getbootstrap.com/)
+
+**Back-end:**
+- Java
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Maven](https://maven.apache.org/)
+- [Lombok](https://projectlombok.org/)
+- [H2 Database](https://www.h2database.com/html/main.html)
+
+### 🧱 Arquitetura do Projeto
+
+O projeto segue uma arquitetura de monorepo, com o front-end e o back-end em pastas separadas para melhor organização e desenvolvimento.
+
+### ▶️ Como Rodar o Projeto
+
+Siga os passos abaixo para executar o projeto em sua máquina.
+
+**Pré-requisitos:**
+- [Java Development Kit (JDK) 21 ou superior](https://www.oracle.com/java/technologies/downloads/)
+- [Maven](https://maven.apache.org/download.cgi)
+- Um editor de código, como o [VS Code](https://code.visualstudio.com/)
+
+**1. Clone o Repositório:**
+
+```bash
+git clone [https://github.com/seu-usuario/OrganizeDin.git](https://github.com/seu-usuario/OrganizeDin.git)
+cd OrganizeDin
+
+2. Rodar o Back-end:
+
+Abra um terminal na pasta principal do projeto.
+
+Navegue até a pasta backend:
+
+Bash
+
+cd backend
+Execute o projeto com o Maven Wrapper:
+
+Bash
+
+./mvnw spring-boot:run
+No Windows, você pode usar:
+
+Bash
+
+mvnw spring-boot:run
+Aguarde até que o terminal exiba a mensagem de que a aplicação foi iniciada.
+
+3. Rodar o Front-end:
+
+Abra o VS Code na pasta principal do projeto.
+
+Instale a extensão "Live Server" se ainda não a tiver.
+
+Navegue até a pasta frontend e abra o arquivo index.html.
+
+Clique em "Go Live" na barra de status do VS Code para abrir o projeto no seu navegador.
+
+⚙️ Endpoints da API
+A API foi desenvolvida usando Spring Boot e expõe os seguintes endpoints:
+
+Método	Endpoint	Descrição
+POST	/api/register	Cria um novo usuário no banco de dados.
+POST	/api/login	Autentica um usuário existente.
+GET	/dashboard/summary	Retorna um resumo dos dados do painel (saldo, receitas, despesas).
+
