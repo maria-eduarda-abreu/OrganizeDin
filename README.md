@@ -32,7 +32,7 @@ O **OrganizeDin** é uma plataforma de gerenciamento financeiro desenvolvida com
 ### 🖼️ Protótipo das Telas
 
 <div align="center">
- <a href="[https://maria-eduarda-abreu.github.io/portifolio/](https://www.figma.com/design/DJ0IvEIKEQy1O9I23S00Yv/OrganizeDIn?node-id=0-1&t=a4Enrjbmm19sJS9B-1)" style="color: blue;"> Acesse o protótipo das telas do projeto pelo Figma </a>
+ [ Acesse o protótipo das telas do projeto pelo Figma](https://www.figma.com/design/DJ0IvEIKEQy1O9I23S00Yv/OrganizeDIn?node-id=0-1&t=a4Enrjbmm19sJS9B-1) </a>
 </div>
 
 
