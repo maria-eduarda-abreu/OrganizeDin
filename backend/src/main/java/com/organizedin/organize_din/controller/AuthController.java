@@ -1,11 +1,14 @@
 package com.organizedin.organize_din.controller;
 
 import com.organizedin.organize_din.dto.LoginRequest;
+import com.organizedin.organize_din.dto.LoginResponse;
 import com.organizedin.organize_din.dto.RegisterRequest;
 import com.organizedin.organize_din.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -20,10 +23,17 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginRequest request) {
+    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         System.out.println("Requisição de Login recebida para o e-mail: " + request.getEmail());
-        String responseMessage = authService.authenticateUser(request.getEmail(), request.getPassword());
-        return ResponseEntity.ok(responseMessage);
+        Optional<LoginResponse> loginResponseOptional = authService.authenticateUser(request.getEmail(), request.getPassword());
+
+        if (loginResponseOptional.isPresent()) {
+            System.out.println("Login bem-sucedido.");
+            return ResponseEntity.ok(loginResponseOptional.get());
+        } else {
+            System.out.println("E-mail ou senha inválidos.");
+            return ResponseEntity.status(401).body("E-mail ou senha inválidos.");
+        }
     }
 
     @PostMapping("/register")

@@ -1,5 +1,6 @@
 package com.organizedin.organize_din.service;
 
+import com.organizedin.organize_din.dto.LoginResponse;
 import com.organizedin.organize_din.dto.RegisterRequest;
 import com.organizedin.organize_din.model.User;
 import com.organizedin.organize_din.repository.UserRepository;
@@ -33,16 +34,20 @@ public class AuthService {
         return "Usuário registrado com sucesso!";
     }
 
-    public String authenticateUser(String email, String password) {
+    // Método modificado para retornar um objeto em vez de uma String
+    public Optional<LoginResponse> authenticateUser(String email, String password) {
         Optional<User> userOptional = userRepository.findByEmail(email);
 
         if (userOptional.isPresent()) {
             User user = userOptional.get();
             if (user.getPassword().equals(password)) { // AVISO: Em produção, verificar senha criptografada.
                 System.out.println("Autenticação bem-sucedida para o e-mail: " + email);
-                return "Login bem-sucedido!";
+                LoginResponse response = new LoginResponse();
+                response.setName(user.getName());
+                response.setEmail(user.getEmail());
+                return Optional.of(response);
             }
         }
-        return "E-mail ou senha inválidos.";
+        return Optional.empty(); // Retorna Optional vazio se as credenciais forem inválidas.
     }
 }
