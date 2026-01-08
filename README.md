@@ -1,113 +1,98 @@
-### OrganizeDin
+# 💰 OrganizeDin - Gestão Financeira Inteligente
 
-#### <p align="center">Gerencie suas finanças de forma simples e intuitiva.</p>
+![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=java)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5.4-brightgreen?style=for-the-badge&logo=spring-boot)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.2.3-purple?style=for-the-badge&logo=bootstrap)
+![Status](https://img.shields.io/badge/Status-MVP_Em_Desenvolvimento-yellow?style=for-the-badge)
 
----
-
-### 📋 Índice
-
-- [Descrição do Projeto](#-descrição-do-projeto)
-- [Funcionalidades](#-funcionalidades)
-- [Protótipo das Telas](#-protótipo-das-telas)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Arquitetura do Projeto](#-arquitetura-do-projeto)
-- [Como Rodar o Projeto](#-como-rodar-o-projeto)
-- [Endpoints da API](#-endpoints-da-api)
+> **Challenge FIAP 2025** - Solução tecnológica para combate ao endividamento por meio da gestão financeira.
 
 ---
 
-### 📝 Descrição do Projeto
+## Sobre o Projeto
 
-O **OrganizeDin** é uma plataforma de gerenciamento financeiro desenvolvida como um projeto de estudo. O objetivo é fornecer aos usuários uma ferramenta completa para educação financeira, que inclui gerenciamento de finanças, planejamento financeiro e visualização de dados. Diferentemente de outros aplicativos que oferecem funcionalidades limitadas ou planos pagos, o OrganizeDin busca ser uma solução completa e acessível.
+O **OrganizeDin** é um ecossistema de gerenciamento financeiro focado em simplicidade e educação. Nosso objetivo é mitigar o número de pessoas endividadas no Brasil através de uma ferramenta que centraliza receitas, despesas e metas.
 
-### ✨ Funcionalidades
+O sistema foi projetado com uma **Arquitetura Client-Server**, onde uma API robusta serve múltiplos clientes (Web e Mobile), garantindo integridade e sincronização dos dados em qualquer dispositivo.
 
-- **Cadastro e Login de Usuários:** Sistema de autenticação para acesso seguro à plataforma.
-- **Painel de Controle (Dashboard):** Visão geral do saldo, receitas, despesas e últimas transações.
-- **Futuras Funcionalidades:**
-    - Gerenciamento de despesas e receitas.
-    - Planejamento de metas financeiras.
-    - Seção de notícias e estudos sobre finanças.
+---
 
-### 🖼️ Protótipo das Telas
+## Arquitetura do Sistema
 
-<div align="center">
- [ Acesse o protótipo das telas do projeto pelo Figma](https://www.figma.com/design/DJ0IvEIKEQy1O9I23S00Yv/OrganizeDIn?node-id=0-1&t=a4Enrjbmm19sJS9B-1) </a>
-</div>
+O projeto adota o padrão **RESTful** em um Monorepo, separando claramente as responsabilidades de Frontend e Backend.
+
+```mermaid
+graph TD
+    User((👤 Usuário))
+    
+    subgraph "Frontend Layer"
+        Web[ Aplicação Web<br>(HTML5 / JS / Bootstrap)]
+        Mobile[📱 App Mobile<br>(Futuro: Android Nativo)]
+    end
+    
+    subgraph "Backend Layer (API)"
+        API[ Spring Boot API<br>(Rest Controllers)]
+        Auth[ Autenticação]
+        Service[⚙ Regras de Negócio]
+        Repo[ Repositórios JPA]
+    end
+    
+    subgraph "Data Layer"
+        DB[(🗄 H2 Database / Oracle)]
+    end
+
+    User -->|Acessa via Navegador| Web
+    User -->|Acessa via App| Mobile
+    Web -->|JSON / HTTP| API
+    Mobile -->|JSON / HTTP| API
+    API --> Auth --> Service --> Repo
+    Repo --> DB
+
+Tecnologias Utilizadas
+Backend (API):
+
+Java 21 (LTS)
+
+Spring Boot 3.5.4
+
+Maven (Gerenciamento de dependências)
+
+Spring Data JPA (Persistência)
+
+H2 Database (Banco em memória para Dev)
+
+Lombok (Redução de código boilerplate)
+
+Frontend (Web):
+
+HTML5 & CSS3
+
+Bootstrap 5.2.3 (Responsividade)
+
+JavaScript (ES6+) (Consumo de API via fetch)
+
+Funcionalidades (Storymap)
+Fase 1: MVP (Versão Atual)
+[x] Cadastro: Registro de usuários com validação de e-mail único.
+
+[x] Login: Autenticação simples via API.
+
+[x] Dashboard: Visualização de Saldo Total, Receitas e Despesas (Dados mockados/iniciais).
+
+[x] Integração: Comunicação assíncrona entre Frontend e Backend (JSON).
+
+Fase 2: Gestão & Persistência (Em Breve)
+[ ] CRUD de Transações: Adicionar/Editar receitas e despesas reais no banco.
+
+[ ] Categorização: Classificação de gastos (Educação, Lazer, etc).
+
+[ ] Segurança: Criptografia de senhas (BCrypt) e Tokens JWT.
+
+Fase 3: Mobile & Expansão (Futuro)
+[ ] App Android Nativo: Integração completa.
+
+[ ] Metas: Definição de objetivos de curto/longo prazo.
 
 
-### 💻 Tecnologias Utilizadas
 
-O projeto utiliza uma arquitetura de duas camadas (front-end e back-end) e as seguintes tecnologias:
-
-**Front-end:**
-- HTML5
-- CSS3
-- JavaScript
-- [Bootstrap](https://getbootstrap.com/)
-
-**Back-end:**
-- Java
-- [Spring Boot](https://spring.io/projects/spring-boot)
-- [Maven](https://maven.apache.org/)
-- [Lombok](https://projectlombok.org/)
-- [H2 Database](https://www.h2database.com/html/main.html)
-
-### 🧱 Arquitetura do Projeto
-
-O projeto segue uma arquitetura de monorepo, com o front-end e o back-end em pastas separadas para melhor organização e desenvolvimento.
-
-### ▶️ Como Rodar o Projeto
-
-Siga os passos abaixo para executar o projeto em sua máquina.
-
-**Pré-requisitos:**
-- [Java Development Kit (JDK) 21 ou superior](https://www.oracle.com/java/technologies/downloads/)
-- [Maven](https://maven.apache.org/download.cgi)
-- Um editor de código, como o [VS Code](https://code.visualstudio.com/)
-
-**1. Clone o Repositório:**
-
-```bash
-git clone [https://github.com/seu-usuario/OrganizeDin.git](https://github.com/seu-usuario/OrganizeDin.git)
-cd OrganizeDin
-
-2. Rodar o Back-end:
-
-Abra um terminal na pasta principal do projeto.
-
-Navegue até a pasta backend:
-
-Bash
-
-cd backend
-Execute o projeto com o Maven Wrapper:
-
-Bash
-
-./mvnw spring-boot:run
-No Windows, você pode usar:
-
-Bash
-
-mvnw spring-boot:run
-Aguarde até que o terminal exiba a mensagem de que a aplicação foi iniciada.
-
-3. Rodar o Front-end:
-
-Abra o VS Code na pasta principal do projeto.
-
-Instale a extensão "Live Server" se ainda não a tiver.
-
-Navegue até a pasta frontend e abra o arquivo index.html.
-
-Clique em "Go Live" na barra de status do VS Code para abrir o projeto no seu navegador.
-
-⚙️ Endpoints da API
-A API foi desenvolvida usando Spring Boot e expõe os seguintes endpoints:
-
-Método	Endpoint	Descrição
-POST	/api/register	Cria um novo usuário no banco de dados.
-POST	/api/login	Autentica um usuário existente.
-GET	/dashboard/summary	Retorna um resumo dos dados do painel (saldo, receitas, despesas).
 
