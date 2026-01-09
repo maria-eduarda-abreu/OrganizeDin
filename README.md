@@ -15,64 +15,55 @@ O **OrganizeDin** é um ecossistema de gerenciamento financeiro focado em simpli
 
 O sistema foi projetado com uma **Arquitetura Client-Server**, onde uma API robusta serve múltiplos clientes (Web e Mobile), garantindo integridade e sincronização dos dados em qualquer dispositivo.
 
+### OrganizeDin Prototype
+[Acesse o protótipo do OrganizeDin](https://www.figma.com/design/DJ0IvEIKEQy1O9I23S00Yv/OrganizeDIn?node-id=108-498&t=JD8UQIm0UQ3P6DzS-1)
+
+### OrganizeDin Storymap
+[Acesse o Storymap do OrganizeDin](https://www.figma.com/board/Z2kI9k0vGbybTcWfgI1mR0/Story-Map-Fluxograma----OrganizeDin--Copy-?node-id=0-1&t=huBgdyv1VjFUyK6s-1)
+
 ---
 
 ## Arquitetura do Sistema
 
 O projeto adota o padrão **RESTful** em um Monorepo, separando claramente as responsabilidades de Frontend e Backend.
 
-```mermaid
-graph TD
-    User((👤 Usuário))
     
-    subgraph "Frontend Layer"
-        Web[ Aplicação Web<br>(HTML5 / JS / Bootstrap)]
-        Mobile[📱 App Mobile<br>(Futuro: Android Nativo)]
-    end
+### Frontend Layer
+        Web - Aplicação Web (HTML5 / JS / Bootstrap)
+        Mobile - App Mobile(Futuro: Android Nativo)
+   
     
-    subgraph "Backend Layer (API)"
-        API[ Spring Boot API<br>(Rest Controllers)]
-        Auth[ Autenticação]
-        Service[⚙ Regras de Negócio]
-        Repo[ Repositórios JPA]
-    end
+### Backend Layer (API)
+        API - Spring Boot API(Rest Controllers)
+        Auth - Autenticação
+        Service - ⚙ Regras de Negócio
+        Repo - Repositórios JPA
     
-    subgraph "Data Layer"
-        DB[(🗄 H2 Database / Oracle)]
-    end
+### Data Layer
+        DB - 🗄 H2 Database / Oracle
+  
 
-    User -->|Acessa via Navegador| Web
-    User -->|Acessa via App| Mobile
-    Web -->|JSON / HTTP| API
-    Mobile -->|JSON / HTTP| API
-    API --> Auth --> Service --> Repo
-    Repo --> DB
-
-Tecnologias Utilizadas
+## Tecnologias Utilizadas
 Backend (API):
-
-Java 21 (LTS)
-
-Spring Boot 3.5.4
-
-Maven (Gerenciamento de dependências)
-
-Spring Data JPA (Persistência)
-
-H2 Database (Banco em memória para Dev)
-
-Lombok (Redução de código boilerplate)
+- Java 21 (LTS)
+- Spring Boot 3.5.4
+- Maven (Gerenciamento de dependências)
+- Spring Data JPA (Persistência)
+- H2 Database (Banco em memória para Dev)
+- Lombok (Redução de código boilerplate)
 
 Frontend (Web):
+- HTML5 & CSS3
+- Bootstrap 5.2.3 (Responsividade)
+- JavaScript (ES6+) (Consumo de API via fetch)
 
-HTML5 & CSS3
+--- 
 
-Bootstrap 5.2.3 (Responsividade)
+### Funcionalidades 
 
-JavaScript (ES6+) (Consumo de API via fetch)
 
-Funcionalidades (Storymap)
-Fase 1: MVP (Versão Atual)
+- Fase 1: MVP (Versão Atual)
+  
 [x] Cadastro: Registro de usuários com validação de e-mail único.
 
 [x] Login: Autenticação simples via API.
@@ -81,14 +72,16 @@ Fase 1: MVP (Versão Atual)
 
 [x] Integração: Comunicação assíncrona entre Frontend e Backend (JSON).
 
-Fase 2: Gestão & Persistência (Em Breve)
+- Fase 2: Gestão & Persistência (Em Breve)
+  
 [ ] CRUD de Transações: Adicionar/Editar receitas e despesas reais no banco.
 
 [ ] Categorização: Classificação de gastos (Educação, Lazer, etc).
 
 [ ] Segurança: Criptografia de senhas (BCrypt) e Tokens JWT.
 
-Fase 3: Mobile & Expansão (Futuro)
+- Fase 3: Mobile & Expansão (Futuro)
+
 [ ] App Android Nativo: Integração completa.
 
 [ ] Metas: Definição de objetivos de curto/longo prazo.
